@@ -218,3 +218,14 @@ function totalPrice() {
 
 
 
+function checkout() {
+    const checkOut = window.confirm("Are you sure about that?!")
+
+    if (!checkOut) {
+        return
+    }
+
+
+}
+
+
