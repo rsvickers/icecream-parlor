@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(246, 189, 115);
+}
+
+img {
+    height: 25vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.iceCreamLogo {
+    color: rgb(255, 99, 125);
+    font-size: 6em;
+}
+
+.funFont {
+    font-family: 'Gloria Hallelujah', cursive;
+    color: rgb(191, 108, 0);
+    font-size: 5em;
+}
