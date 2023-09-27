@@ -59,7 +59,7 @@ function addStrawberryIceCreamToCart() {
     console.log('great choice on the ', strawberryIceCream);
 
     drawIceCreamCart()
-    drawToppingsCart()
+
 }
 
 function addChocolateIceCreamToCart() {
@@ -68,7 +68,7 @@ function addChocolateIceCreamToCart() {
     console.log('I also enjoy', chocolateIceCream);
 
     drawIceCreamCart()
-    drawToppingsCart()
+
 }
 
 function addVanillaIceCreamToCart() {
@@ -77,8 +77,8 @@ function addVanillaIceCreamToCart() {
     console.log('could have chosen better', vanillaIceCream)
 
     drawIceCreamCart()
-    drawVesselCart()
-    drawToppingsCart()
+
+
 }
 
 function addVesselToCart(vesselName) {
@@ -86,9 +86,8 @@ function addVesselToCart(vesselName) {
     wantVessel.quantity++
     console.log('Ahh seems like you want', wantVessel);
 
-    drawIceCreamCart()
     drawVesselCart()
-    drawToppingsCart()
+
 }
 
 function addToppingsToCart(toppingName) {
@@ -96,8 +95,7 @@ function addToppingsToCart(toppingName) {
     wantToppings.quantity++
     console.log('Not a bad choice', wantToppings)
 
-    drawIceCreamCart()
-    drawVesselCart()
+
     drawToppingsCart()
 }
 
@@ -173,9 +171,6 @@ function vesselTotal() {
 }
 
 
-
-
-
 function drawToppingsCart() {
     let content = ''
 
@@ -191,26 +186,35 @@ function drawToppingsCart() {
     const cartElement = document.getElementById('toppingCart')
     cartElement.innerHTML = content
 
-    let toppingsCart = toppingsTotal()
+    let toppingTotal = toppingsTotal()
 
-    const toppingsCartElement = document.getElementById('cartTotal')
-    toppingsCartElement.innerText = toppingsCart.toFixed(2)
+    const toppingTotalElement = document.getElementById('cartTotal')
+    toppingTotalElement.innerText = toppingTotal.toFixed(2)
+
 
 }
 
-// function toppingsTotal() {
-//     let toppingsCart = 0
+function toppingsTotal() {
+    let toppingTotal = 0
 
-//     toppings.forEach(topping => {
-//         const itemTotal = topping.quantity * topping.price
-//         toppingsCart += itemTotal
-//     })
+    toppings.forEach(topping => {
+        const itemTotal = topping.quantity * topping.price
+        toppingTotal += itemTotal
+    })
 
-//     return toppingsCart
-// }
+    return toppingTotal
+}
 
 
+function totalPrice() {
 
+    let iceCreamTotal = drawIceCreamCart()
+    let vesselTotal = drawVesselCart()
+    let toppingsTotal = drawToppingsCart()
+
+    iceCreamTotal + vesselTotal + toppingsTotal
+
+}
 
 
 
