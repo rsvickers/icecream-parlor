@@ -207,15 +207,19 @@ function toppingsTotal() {
 
 
 function totalPrice() {
-
+    let finalTotal = 0
     let iceCreamTotal = drawIceCreamCart()
     let vesselTotal = drawVesselCart()
     let toppingsTotal = drawToppingsCart()
 
-    iceCreamTotal + vesselTotal + toppingsTotal
 
+
+    const itemTotal = iceCreamTotal + vesselTotal + toppingsTotal
+    finalTotal += itemTotal
+
+    const totalElement = document.getElementById('cartTotal')
+    totalElement.innerText = itemTotal.toFixed(2)
 }
-
 
 
 function checkout() {
